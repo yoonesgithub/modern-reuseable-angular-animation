@@ -1,0 +1,25 @@
+<div class="w-100 vh-100 border border-1 bg-light position-relative d-flex justify-content-center align-items-center">
+  <h2 class="text-dark position-absolute top-0 mt-3 start-50 translate-middle-x">
+    enter animations
+    <span class="text-primary opacity-50">binding</span>
+  </h2>
+  <div
+    class="d-flex gap-2 position-absolute start-50 translate-middle"
+    style="top: 20%;">
+    @for (option of animationOptions; track option.value) {
+      <button
+        type="button"
+        class="btn px-4 py-2 rounded-3"
+        (click)="setAnimation(option.value)"
+        [class.btn-primary]="animation() === option.value"
+        [class.text-dark]="animation() !== option.value">
+        {{ option.label }}
+      </button>
+    }
+  </div>
+
+  @if (show()) {
+    <!-- binding class -->
+    <app-tender-swan-29 [animate.enter]="animation()"></app-tender-swan-29>
+  }
+</div>

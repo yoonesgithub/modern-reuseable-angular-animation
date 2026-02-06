@@ -1,0 +1,12 @@
+<div class="w-100 vh-100 bg-white position-relative d-flex flex-column align-items-center justify-content-start pad-t-218px gap-4">
+        <button (click)="toggle()" style="top: 20%;" class="btn position-absolute start-50 translate-middle  btn-dark px-4 py-2 rounded-3">toggle</button>
+    <h2 class="text-black position-absolute top-0 mt-3 start-50 translate-middle-x" >Staggering animations in a list</h2>
+    @if (show()) {
+        @for (item of items(); track $index) {
+                <div animate.leave="leave" style="--index: {{ $index }}; --max: {{items().length}}" class="item border border-2 border-primary w-50 h-45px rounded-8px d-flex align-items-center px-2 bg-white">
+                    list item N.O {{$index + 1}}
+                </div>
+        }
+    }
+   
+</div>

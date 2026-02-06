@@ -1,0 +1,12 @@
+/* والد اسکرول */
+.d-flex.flex-column.bg-dark {
+  height: 100vh;
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+.d-flex.flex-column.bg-dark > * {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}

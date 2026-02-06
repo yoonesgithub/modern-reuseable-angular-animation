@@ -1,0 +1,17 @@
+.item {
+  --step: 200ms;
+  transition-property: opacity, transform;
+  transition-duration: 500ms;
+  transition-delay: calc(var(--step) * var(--index));
+  @starting-style {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+}
+
+.leave {
+  --step: 200ms;
+  transition-delay: calc(var(--step) * (var(--max) - 1 - var(--index)));
+  opacity: 0;
+  transform: translateX(-10px);
+}
